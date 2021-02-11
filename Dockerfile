@@ -15,4 +15,10 @@ RUN cd kustomize-plugins \
 RUN curl -L https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.13.1/kubeseal-linux-amd64 -o kubeseal \
     && install -m 755 kubeseal /usr/local/bin/kubeseal 
 
-ENTRYPOINT []
+FROM alpine
+
+COPY --from=build-env /usr/local/bin/kustomize /usr/local/bin/
+COPY --from=build-env /usr/local/bin/kubeseal /usr/local/bin/
+COPY --from=build-env /usr/app/kustomize/plugin /usr/local/share/kustomize/plugin
+
+ENV KUSTOMIZE_PLUGIN_HOME=/usr/local/share/kustomize/plugin

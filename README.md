@@ -16,7 +16,7 @@ more details about this.
 ### prerequisites
 
 - go 1.14.2
-- kustomize 3.5.5
+- kustomize 3.8.4
 - sealed secret 0.12.3
 
 ### installation

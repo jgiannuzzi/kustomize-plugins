@@ -12,7 +12,7 @@ RUN cd kustomize-plugins \
     && mv ./bin/kustomize /usr/local/bin/kustomize
 
 # install sealed secret
-RUN curl -L https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.9.5/kubeseal-linux-amd64 -o kubeseal \
+RUN curl -L https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.13.1/kubeseal-linux-amd64 -o kubeseal \
     && install -m 755 kubeseal /usr/local/bin/kubeseal 
 
 ENTRYPOINT []

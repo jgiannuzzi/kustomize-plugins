@@ -17,7 +17,7 @@ more details about this.
 
 - go 1.14.15
 - kustomize 3.8.4
-- sealed secret 0.12.3
+- sealed secret 0.13.1
 
 ### installation
 
